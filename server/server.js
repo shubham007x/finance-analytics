@@ -55,3 +55,10 @@ app.use('*', (req, res) => {
 
 // For Vercel deployment, export the app instead of listening
 module.exports = app;
+
+// For other platforms like Render, listen on the port
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
