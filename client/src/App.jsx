@@ -1,5 +1,6 @@
 // client/src/App.js
 import React, { useState, useEffect } from 'react';
+
 import Dashboard from './components/Dashboard';
 import FileUpload from './components/FileUpload';
 import { getTransactions, getTransactionSummary, testConnection } from './services/api.js';
@@ -11,6 +12,7 @@ function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [error, setError] = useState(null);
   const [backendConnected, setBackendConnected] = useState(false);
+  const [skipFetchOnce, setSkipFetchOnce] = useState(true);
 
   useEffect(() => {
     checkBackendConnection();
@@ -46,9 +48,39 @@ function App() {
     }
   };
 
-  const handleFileUploadSuccess = (uploadResult) => {
-    // Refresh data
-    fetchData();
+  const handleFileUploadSuccess = async (uploadResult) => {
+    // Use the data returned from upload directly to avoid any delay or caching issues
+    if (uploadResult && uploadResult.transactions) {
+      setTransactions(uploadResult.transactions);
+
+      // Calculate summary from the uploaded transactions
+      const summary = {
+        totalTransactions: uploadResult.transactions.length,
+        totalIncome: 0,
+        totalExpenses: 0,
+        netBalance: 0,
+        categoryBreakdown: {},
+      };
+
+      uploadResult.transactions.forEach(transaction => {
+        if (transaction.type === 'income') {
+          summary.totalIncome += Math.abs(transaction.amount);
+        } else if (transaction.type === 'expense') {
+          summary.totalExpenses += Math.abs(transaction.amount);
+        }
+
+        // Category breakdown
+        if (!summary.categoryBreakdown[transaction.category]) {
+          summary.categoryBreakdown[transaction.category] = 0;
+        }
+        if (transaction.type === 'expense') {
+          summary.categoryBreakdown[transaction.category] += Math.abs(transaction.amount);
+        }
+      });
+
+      summary.netBalance = summary.totalIncome - summary.totalExpenses;
+      setSummary(summary);
+    }
 
     // Auto-redirect to dashboard after 2 seconds
     setTimeout(() => {

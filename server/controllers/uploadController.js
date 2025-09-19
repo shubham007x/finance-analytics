@@ -42,7 +42,10 @@ const uploadFile = async (req, res) => {
     
     // Parse the document with AI
     const parsedTransactions = await AIParser.parseDocument(filePath, fileExtension);
-    
+
+    // Clear existing transactions to start fresh
+    await Transaction.deleteMany({});
+
     // Save transactions to database
     const savedTransactions = [];
     for (const transactionData of parsedTransactions) {

@@ -28,7 +28,7 @@ const FileUpload = ({ onUploadSuccess }) => {
         try {
             const result = await uploadFile(file);
             setUploadResult(result);
-            onUploadSuccess();
+            onUploadSuccess(result);
             setFile(null);
             // Reset file input
             event.target.reset();
