@@ -75,10 +75,8 @@ function App() {
             Retry Connection
           </button>
           <div className="mt-6 text-left bg-gray-100 p-4 rounded text-sm">
-            <h4 className="font-bold mb-2">To start the backend:</h4>
-            <code className="block">cd server</code>
-            <code className="block">npm install</code>
-            <code className="block">npm start</code>
+            <h4 className="font-bold mb-2">Backend deployed on Render Please wait for sometime and refresh to access application as it spin down my backend server</h4>
+
           </div>
         </div>
       </div>
@@ -126,11 +124,10 @@ function App() {
             <div className="flex space-x-8">
               <button
                 onClick={() => setActiveTab('dashboard')}
-                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-                  activeTab === 'dashboard'
-                    ? 'border-blue-500 text-gray-900'
-                    : 'border-transparent text-gray-500 hover:text-gray-700'
-                }`}
+                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${activeTab === 'dashboard'
+                  ? 'border-blue-500 text-gray-900'
+                  : 'border-transparent text-gray-500 hover:text-gray-700'
+                  }`}
               >
                 Dashboard
                 {transactions.length > 0 && (
@@ -141,11 +138,10 @@ function App() {
               </button>
               <button
                 onClick={() => setActiveTab('upload')}
-                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-                  activeTab === 'upload'
-                    ? 'border-blue-500 text-gray-900'
-                    : 'border-transparent text-gray-500 hover:text-gray-700'
-                }`}
+                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${activeTab === 'upload'
+                  ? 'border-blue-500 text-gray-900'
+                  : 'border-transparent text-gray-500 hover:text-gray-700'
+                  }`}
               >
                 Upload Statement
               </button>
