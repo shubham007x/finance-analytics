@@ -4,7 +4,7 @@ const getApiBaseUrl = () => {
     if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
         return import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
     }
-    return import.meta.env.VITE_API_BASE_URL || 'https://your-backend-domain.com/api';
+    return import.meta.env.VITE_API_BASE_URL || 'https://finance-analytics-8zw1.onrender.com/api';
 };
 
 
