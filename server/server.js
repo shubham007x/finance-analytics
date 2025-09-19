@@ -30,7 +30,10 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/finance-t
 })
     .then(() => console.log('MongoDB connected successfully'))
     .catch(err => console.error('Database connection error:', err));
-
+app.use(cors({
+  origin: ['http://localhost:3000', 'http://localhost:5000', 'https://finance-analytics-shfg.vercel.app/'],
+  credentials: true
+}));
 // Routes
 app.use('/api/transactions', transactionRoutes);
 app.use('/api/upload', uploadRoutes);

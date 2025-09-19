@@ -66,15 +66,19 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-// Delete transaction
+// Delete transaction with enhanced logging
 router.delete('/:id', async (req, res) => {
     try {
+        console.log(`DELETE request received for transaction ID: ${req.params.id}`);
         const transaction = await Transaction.findByIdAndDelete(req.params.id);
         if (!transaction) {
+            console.warn(`Transaction not found for ID: ${req.params.id}`);
             return res.status(404).json({ message: 'Transaction not found' });
         }
+        console.log(`Transaction deleted successfully for ID: ${req.params.id}`);
         res.json({ message: 'Transaction deleted successfully' });
     } catch (error) {
+        console.error('Error deleting transaction:', error);
         res.status(500).json({ message: error.message });
     }
 });
