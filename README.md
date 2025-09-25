@@ -78,8 +78,8 @@ A full-stack MERN application that uses AI to parse bank statements and provides
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/yourusername/ai-finance-tracker.git
-cd ai-finance-tracker
+git clone https://github.com/yourusername/finance-analytics.git
+cd finance-tracker
 ```
 
 ### 2. Backend Setup
