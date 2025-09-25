@@ -1,0 +1,24 @@
+date,description,amount,balance,category,transaction_type
+2024-09-01,Refund - Online Store,89.33,5510.08,income,credit
+2024-09-02,Salary Deposit - TechCorp Inc,2688.04,8198.11,income,credit
+2024-09-05,Transfer from Investment,218.49,8416.6,transfers,credit
+2024-09-06,Grocery Store - Whole Foods,-144.15,8272.45,expenses,debit
+2024-09-07,Refund - Online Store,96.89,8369.34,income,credit
+2024-09-09,Refund - Online Store,88.39,8457.73,income,credit
+2024-09-10,Phone Bill - Verizon,-69.87,8387.86,expenses,debit
+2024-09-11,Transfer to Savings,-580.17,7807.68,transfers,debit
+2024-09-14,Phone Bill - Verizon,-84.54,7723.15,expenses,debit
+2024-09-15,Transfer from Investment,212.58,7935.73,transfers,credit
+2024-09-16,Transfer from Investment,209.61,8145.34,transfers,credit
+2024-09-17,Salary Deposit - TechCorp Inc,2996.88,11142.22,income,credit
+2024-09-19,Transfer to Savings,-590.87,10551.35,transfers,debit
+2024-09-21,Transfer to Savings,-497.21,10054.15,transfers,debit
+2024-09-22,Phone Bill - Verizon,-73.28,9980.86,expenses,debit
+2024-09-23,Transfer to Savings,-573.87,9406.99,transfers,debit
+2024-09-24,Subscription - Netflix,-18.93,9388.06,expenses,debit
+2024-09-25,Transfer from Investment,199.98,9588.03,transfers,credit
+2024-09-26,Salary Deposit - TechCorp Inc,2990.19,12578.22,income,credit
+2024-09-27,Transfer from Investment,187.39,12765.61,transfers,credit
+2024-09-28,Freelance Payment - Digital Agency,811.51,13577.12,income,credit
+2024-09-29,Transfer from Investment,189.49,13766.61,transfers,credit
+2024-09-30,Freelance Payment - Digital Agency,697.7,14464.31,income,credit
