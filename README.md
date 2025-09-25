@@ -1,6 +1,12 @@
 # 🤖 AI-Powered Finance Tracker
 
 A full-stack MERN application that uses AI to parse bank statements and provides intelligent financial insights through an intuitive dashboard.
+<img width="1919" height="907" alt="image" src="https://github.com/user-attachments/assets/03e6dbee-30d4-492f-b792-a6b0c99f90d0" />
+<img width="1917" height="911" alt="image" src="https://github.com/user-attachments/assets/ef442f74-b8db-4918-9f16-8cb506cb3765" />
+<img width="1918" height="915" alt="image" src="https://github.com/user-attachments/assets/7a6e5d1c-0724-4e35-a5f5-4dc91dd56716" />
+
+
+
 
 
 
