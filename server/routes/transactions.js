@@ -52,9 +52,15 @@ router.get('/summary', async (req, res) => {
 // Update transaction
 router.put('/:id', async (req, res) => {
     try {
+        // Adjust amount sign based on type
+        const updateData = { ...req.body, isEdited: true };
+        if (updateData.amount !== undefined) {
+            updateData.amount = updateData.type === 'expense' ? -Math.abs(updateData.amount) : Math.abs(updateData.amount);
+        }
+
         const transaction = await Transaction.findByIdAndUpdate(
             req.params.id,
-            { ...req.body, isEdited: true },
+            updateData,
             { new: true }
         );
         if (!transaction) {
