@@ -7,6 +7,14 @@ const FileUpload = ({ onUploadSuccess }) => {
     const [uploadResult, setUploadResult] = useState(null);
     const [error, setError] = useState(null);
 
+    const formatFileSize = (bytes) => {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    };
+
     const handleFileChange = (event) => {
         const selectedFile = event.target.files[0];
         setFile(selectedFile);
@@ -85,7 +93,7 @@ const FileUpload = ({ onUploadSuccess }) => {
                         </div>
                         {file && (
                             <p className="mt-2 text-sm text-gray-600">
-                                Selected: {file.name} ({(file.size / 1024 / 1024).toFixed(2)} MB)
+                                Selected: {file.name} ({formatFileSize(file.size)})
                             </p>
                         )}
                     </div>

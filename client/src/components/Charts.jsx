@@ -43,7 +43,7 @@ const Charts = ({ summary }) => {
     labels: ['Income', 'Expenses'],
     datasets: [
       {
-        label: 'Amount ($)',
+        label: 'Amount (₹)',
         data: [summary.totalIncome, summary.totalExpenses],
         backgroundColor: ['#22c55e', '#ef4444'],
         borderColor: ['#16a34a', '#dc2626'],
