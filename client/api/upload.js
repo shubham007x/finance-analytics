@@ -51,6 +51,13 @@ export default async function handler(req, res) {
         // Parse the document with AI using buffer
         const parsedTransactions = await AIParser.parseDocumentFromBuffer(fileBuffer, fileExtension);
 
+        if (parsedTransactions.length === 0) {
+          return res.status(400).json({
+            message: 'Invalid bank statement: No transactions found',
+            filename: req.file.originalname,
+          });
+        }
+
         // Clear existing transactions to start fresh
         await Transaction.deleteMany({});
 
