@@ -5,13 +5,6 @@ A full-stack MERN application that uses AI to parse bank statements and provides
 <img width="1917" height="911" alt="image" src="https://github.com/user-attachments/assets/ef442f74-b8db-4918-9f16-8cb506cb3765" />
 <img width="1918" height="915" alt="image" src="https://github.com/user-attachments/assets/7a6e5d1c-0724-4e35-a5f5-4dc91dd56716" />
 
-
-
-
-<img width="3840" height="1878" alt="Untitled diagram _ Mermaid Chart-2025-09-28-142234" src="https://github.com/user-attachments/assets/ee97ab21-6e2c-4122-8ae2-91c25463015a" />
-
-
-
 ## 🌟 Features
 
 ### 📤 **Smart File Upload**
